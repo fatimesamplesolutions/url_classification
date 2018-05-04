@@ -1,21 +1,21 @@
 import pandas as pd
 import csv
 
-# def main():
+def main():
 
     # Read csv file, delete duplicates and write it.
-#     with open('resultss.csv', 'r',newline='') as inputfile:
-#         with open('no_dupss.csv', 'w', newline='') as outputfile:
-#             duplicatereader = csv.DictReader(inputfile, delimiter=',')
-#             uniquewrite = csv.DictWriter(outputfile, fieldnames=['company', 'website'], delimiter=',')
-#             uniquewrite.writeheader()
-#             keysread = []
-#             for row in duplicatereader:
-#                key = (row['company'])
-#                if key not in keysread:
-#                    print(row)
-#                    keysread.append(key)
-#                    uniquewrite.writerow(row)
+    with open('resultss.csv', 'r',newline='') as inputfile:
+        with open('no_dupss_.csv', 'w', newline='') as outputfile:
+            duplicatereader = csv.DictReader(inputfile, delimiter=',')
+            uniquewrite = csv.DictWriter(outputfile, fieldnames=['company', 'website'], delimiter=',')
+            uniquewrite.writeheader()
+            keysread = []
+            for row in duplicatereader:
+               key = (row['company'])
+               if key not in keysread:
+                   print(row)
+                   keysread.append(key)
+                   uniquewrite.writerow(row)
 #
 # """Execute this when run the script first time only"""
 # if __name__ == '__main__':
@@ -23,7 +23,7 @@ import csv
 
 
 
-csv_data = pd.read_csv('no_dupss.csv', index_col=False, header=0)
+csv_data = pd.read_csv('no_dupss_.csv', index_col=False, header=0)
 
 general_websites_list = ['facebook', 'linkedin', '1207', '1307', 'kompass', 'companyweb', 'youtube', 'yelp']
 
@@ -68,7 +68,7 @@ def classified_csv():
     # df.dropna()
     df2.drop_duplicates(inplace=True)
     # df2.index = df2.index + 1
-    df2.to_csv('classified_urls_res.csv')
+    df2.to_csv('classified_urls_.csv')
     return df2
 
 
