@@ -23,9 +23,9 @@ def main():
 
 
 
-csv_data = pd.read_csv('no_dupss_.csv', index_col=False, header=0)
+csv_data = pd.read_csv('classified_urls_merged.csv', index_col=False, header=0)
 
-general_websites_list = ['facebook', 'linkedin', '1207', '1307', 'kompass', 'companyweb', 'youtube', 'yelp']
+general_websites_list = ['facebook', 'linkedin', '1207', '1307', 'kompass', 'companyweb', 'youtube', 'yelp', 'companytracker','data.be', 'infobel', 'bsearch', 'trendstop', 'hoovers','bloomberg','pagesdoor','tuugo','myshopi','yelp','bizbook','bizique','europages','goldenpages','airbnb','194.7.35.240','info-clipper','goudengids','handelsgids','pdv.apixml.net','belgiancompanies','food','cadastre','transport-international','infos-bruxelles','lacapitale','belgian.company','tripadvisor','kadaster','fr.autoscout24.be','bedrijvenpagina','twitter','belgium-services','booking','info-brabant-wallon','staatsbladmonitor','users.skynet.bet','heures','avelgem','cylex','numero-pro','autoscout24','openingsuren','foursquare','truckscout24','maasmechelen','church.cybo','companycheck']
 
 general_websites = []
 company_websites = []
@@ -68,7 +68,7 @@ def classified_csv():
     # df.dropna()
     df2.drop_duplicates(inplace=True)
     # df2.index = df2.index + 1
-    df2.to_csv('classified_urls_.csv')
+    df2.to_csv('classified.csv')
     return df2
 
 
