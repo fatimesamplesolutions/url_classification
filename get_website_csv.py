@@ -24,5 +24,6 @@ with open(csvfile, "w") as output:
     for val in res:
         v = val.split('www.')
         v1 = v[-1]
+        v1 = str(v1).strip()
         writer.writerow([v1])
 
